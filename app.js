@@ -28,6 +28,7 @@ app.use('/recept', receptRouter);
 app.use('/napotnice', napotniceRouter);
 app.use('/obvestila', obvestilaRouter);
 
+app.use(express.static('/public/images'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
