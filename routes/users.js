@@ -19,10 +19,10 @@ function response(body) {
         if (err) throw err;
         con.query(`SELECT * FROM uporabnik WHERE ime = ${body.username}`, function (err, result, fields) {
             if (err) throw err;
-            if (body.password == result.geslo) {
-                return true;
+            if (body.password === result.geslo) {
+                response = true;
             } else {
-                return false
+                response = true;
             }
             response = result;
             console.log(response)
@@ -34,8 +34,7 @@ function response(body) {
 
 /* GET users listing. */
 router.post('/', function(req, res, next) {
-    let resp = response(req.body)
-    res.send(resp);
+    res.send(response);
 });
 
 module.exports = router;
