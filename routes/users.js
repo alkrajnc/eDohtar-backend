@@ -13,7 +13,7 @@ var con = mysql.createConnection({
 
 
 
-function response(body) {
+
     let response = [];
     con.connect(function(err) {
         if (err) throw err;
@@ -29,7 +29,7 @@ function response(body) {
 
         });
     });
-}
+
 
 
 /* GET users listing. */
