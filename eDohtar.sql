@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS recepti
 	CONSTRAINT FK_uporabnik FOREIGN KEY (id_uporabnika)
    REFERENCES uporabnik(id_uporabnika)
 );
-CREATE TABLE IF NOT EXISTS obvestilo
+CREATE TABLE IF NOT EXISTS obvestila
 (
 	id_obvestila INT PRIMARY KEY AUTO_INCREMENT,
 	ime_obvestila VARCHAR(30) NOT NULL,
