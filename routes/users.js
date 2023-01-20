@@ -14,12 +14,18 @@ var con = mysql.createConnection({
 
 
 
+
+
+
+
+/* GET users listing. */
+router.post('/', function(req, res, next) {
     let response = [];
     con.connect(function(err) {
         if (err) throw err;
-        con.query(`SELECT * FROM uporabnik WHERE ime = ${body.username}`, function (err, result, fields) {
+        con.query(`SELECT * FROM uporabnik WHERE ime = ${req.body.username}`, function (err, result, fields) {
             if (err) throw err;
-            if (body.password === result.geslo) {
+            if (req.body.password === result.geslo) {
                 response = true;
             } else {
                 response = true;
@@ -30,11 +36,9 @@ var con = mysql.createConnection({
         });
     });
 
-
-
-/* GET users listing. */
-router.post('/', function(req, res, next) {
     res.send(response);
+
+
 });
 
 module.exports = router;
